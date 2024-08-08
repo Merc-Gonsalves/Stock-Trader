@@ -10,13 +10,11 @@ from finbert_utils import estimate_sentiment
 API_KEY = "YOUR API KEY" 
 API_SECRET = "YOUR API SECRET" 
 BASE_URL = "https://paper-api.alpaca.markets"
-
 ALPACA_CREDS = {
     "API_KEY":API_KEY, 
     "API_SECRET": API_SECRET, 
     "PAPER": True
 }
-
 class MLTrader(Strategy): 
     def initialize(self, symbol:str="SPY", cash_at_risk:float=.5): 
         self.symbol = symbol
