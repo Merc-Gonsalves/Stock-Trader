@@ -75,7 +75,7 @@ class MLTrader(Strategy):
                 self.submit_order(order) 
                 self.last_trade = "sell"
 
-start_date = datetime(2020,1,1)
+start_date = datetime(2022,1,1)
 end_date = datetime(2023,12,31) 
 broker = Alpaca(ALPACA_CREDS) 
 strategy = MLTrader(name='mlstrat', broker=broker, 
@@ -87,6 +87,6 @@ strategy.backtest(
     end_date, 
     parameters={"symbol":"SPY", "cash_at_risk":.5}
 )
-# trader = Trader()
-# trader.add_strategy(strategy)
-# trader.run_all()
+trader = Trader()
+trader.add_strategy(strategy)
+trader.run_all()
